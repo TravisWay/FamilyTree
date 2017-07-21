@@ -2,8 +2,6 @@ package com.skilldistillery.film.data;
 
 import java.util.List;
 
-import com.mysql.jdbc.Driver;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -123,7 +121,6 @@ public class FilmDaoDBImpl implements FilmDAO {
 			stmt.setString(3, film.getRating());
 			stmt.setString(4, film.getDescription());
 			stmt.setInt(5, 3);
-			ResultSet rSet = stmt.executeQuery();
 			int updateCount = stmt.executeUpdate();
 			if (updateCount == 1) {
 				ResultSet keys = stmt.getGeneratedKeys();
