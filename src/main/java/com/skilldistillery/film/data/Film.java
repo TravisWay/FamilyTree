@@ -3,6 +3,15 @@ package com.skilldistillery.film.data;
 import java.util.List;
 
 public class Film {
+	private int id;
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	private int length;
 	private String rating;
 	private String title;
