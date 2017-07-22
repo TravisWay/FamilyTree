@@ -8,6 +8,7 @@
 <title>Films</title>
 </head>
 <body>
+<h3>Search for a Film to view, update or delete</h3>
 <form action="getKeyword.do" method = "GET">
 <input type = "text" name= "filmkey" value ="${filmkey}">
 <input type = "submit" value = "Look Up Film Keyword">
@@ -46,7 +47,7 @@
 
 <br><br><br>
 <hr>
-Add a film<br>
+<h3>Add a film</h3>
 <form action="addFilm.do" method = "GET">
 Title
 <input type = "text" name= "film title">

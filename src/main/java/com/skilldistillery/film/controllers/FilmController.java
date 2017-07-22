@@ -25,19 +25,19 @@ public class FilmController {
 
 	@RequestMapping(path = "getTitle.do")
 	public ModelAndView getFilmTitleById(@RequestParam(name = "filmId") Integer filmId) {
-		String viewName = "WEB-INF/views/home.jsp";
+		String viewName = "WEB-INF/views/searchresult.jsp";
 		ModelAndView mv = new ModelAndView(viewName);
-		String title = dao.getFilmTitleById(filmId);
-		mv.addObject("filmTitle", title);
+		List<Film> films = dao.getFilmTitleById(filmId);
+		mv.addObject("filmTitlekey", films);
 		return mv;
 	}
 
 	@RequestMapping(path = "getKeyword.do")
 	public ModelAndView getFilmTitleByKeyword(@RequestParam("filmkey") String filmkey) {
-		String viewName = "WEB-INF/views/home.jsp";
+		String viewName = "WEB-INF/views/searchresult.jsp";
 		ModelAndView mv = new ModelAndView(viewName);
-		List<Film> title = dao.getFilmTitleByKeyword(filmkey);
-		mv.addObject("filmTitlekey", title);
+		List<Film> films = dao.getFilmTitleByKeyword(filmkey);
+		mv.addObject("filmTitlekey", films);
 		return mv;
 	}
 
@@ -50,6 +50,27 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView(viewName);
 		mv.addObject("film", dao.addFilm(film));
 
+		return mv;
+	}
+	@RequestMapping(path = "deletefilm.do")
+	public ModelAndView deleteFilm(@RequestParam("id") int id) {
+		String viewName = "WEB-INF/views/deleteresult.jsp";
+		ModelAndView mv = new ModelAndView(viewName);
+		List<Film> films = dao.getFilmTitleById(id);
+		mv.addObject("filmTitlekey", films);
+		dao.deleteFilm(id);
+		return mv;
+	}
+	@RequestMapping(path = "updatefilm.do")
+	public ModelAndView updateFilm(@RequestParam("film title") String title, @RequestParam("film length") int length,
+			@RequestParam("film rating") String rating, @RequestParam("film description") String description, @RequestParam("film id") int id) {
+		Film film = new Film(length, rating, title, description);
+		film.setId(id);
+		dao.updateFilm(film);
+		String viewName = "WEB-INF/views/updateresult.jsp";
+		ModelAndView mv = new ModelAndView(viewName);
+		List<Film> films = dao.getFilmTitleById(film.getId());
+		mv.addObject("filmTitlekey", films);
 		return mv;
 	}
 	
