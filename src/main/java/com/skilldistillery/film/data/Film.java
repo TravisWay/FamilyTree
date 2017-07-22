@@ -27,7 +27,18 @@ public class Film {
 	public void setCast(List<Actor> cast) {
 		this.cast = cast;
 	}
-	
+	public Film() {
+		
+	}
+	public Film(int length, String rating, String title, String description) {
+		super();
+		this.length = length;
+		this.rating = rating;
+		this.title = title;
+		this.description = description;
+	}
+
+
 	public Film(int length, String rating, String title, String description, List<Actor> cast) {
 		this.length = length;
 		this.rating = rating;

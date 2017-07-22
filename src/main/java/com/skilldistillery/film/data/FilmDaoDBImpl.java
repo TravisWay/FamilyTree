@@ -2,6 +2,8 @@ package com.skilldistillery.film.data;
 
 import java.util.List;
 
+import com.mysql.jdbc.Statement;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -115,7 +117,7 @@ public class FilmDaoDBImpl implements FilmDAO {
 			conn = DriverManager.getConnection(url, user, pass);
 			conn.setAutoCommit(false);
 			String sql = "INSERT INTO film (title, length, rating, description, language_id) VALUES(?,?,?,?,?)";
-			PreparedStatement stmt = conn.prepareStatement(sql);
+			PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, film.getTitle());
 			stmt.setInt(2, film.getLength());
 			stmt.setString(3, film.getRating());
@@ -140,7 +142,7 @@ public class FilmDaoDBImpl implements FilmDAO {
 		        System.err.println("Error trying to rollback");
 		      }
 		    }
-		    throw new RuntimeException("Error inserting actor " + film);
+		    throw new RuntimeException("Error inserting film " + film);
 		  }
 		  return film;
 		}

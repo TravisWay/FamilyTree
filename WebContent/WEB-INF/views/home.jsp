@@ -32,9 +32,9 @@
 </form>
 
 
-<%-- <form action="getTitle.do" method = "GET">
+<form action="getTitle.do" method = "GET">
 <input type = "text" name= "filmId">
-<input type = "submit" value = "Look Up Film">
+<input type = "submit" value = "Look Up Film by ID">
 
 </form>
 <c:choose>
@@ -42,6 +42,31 @@
     <h3>${filmTitle}</h3>
   </c:when>
 </c:choose>
- --%>
+</form>
+
+<br><br><br>
+<hr>
+Add a film<br>
+<form action="addFilm.do" method = "GET">
+Title
+<input type = "text" name= "film title">
+<br>Length
+<input type = "number" name= "film length" value='90'>
+<br>Rating
+<select name="film rating">
+  <option value="G">G</option>
+  <option value="PG">PG</option>
+  <option value="PG13">PG13</option>
+  <option value="R">R</option>
+  <option value="NC17">Porn</option>
+</select>
+<br>Description
+<input type = "text" name= "film description">
+<br>
+<input type = "submit" value = "ADD Film">
+
+</form>
+
+
 </body>
 </html>
