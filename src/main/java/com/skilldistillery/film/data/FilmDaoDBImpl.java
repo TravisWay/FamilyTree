@@ -194,7 +194,7 @@ public class FilmDaoDBImpl implements FilmDAO {
 	}
 
 	@Override
-	public int updateFilm(Film film) {
+	public Film updateFilm(Film film) {
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(url, user, pass);
@@ -220,7 +220,7 @@ public class FilmDaoDBImpl implements FilmDAO {
 			}
 			throw new RuntimeException("Error deleting film " + film);
 		}
-		return film.getId();
+		return film;
 	}
 
 }

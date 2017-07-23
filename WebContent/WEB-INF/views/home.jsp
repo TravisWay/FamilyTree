@@ -48,7 +48,7 @@
 <br><br><br>
 <hr>
 <h3>Add a film</h3>
-<form action="addFilm.do" method = "GET">
+<form action="addFilm.do" method="POST">
 Title
 <input type = "text" name= "film title">
 <br>Length

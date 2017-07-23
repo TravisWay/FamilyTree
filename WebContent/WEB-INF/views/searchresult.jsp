@@ -12,21 +12,22 @@
 		<c:when test="${filmTitlekey != null}">
 			<ul>
 				<c:forEach var="film" items="${filmTitlekey}">
-					<li><c:out value="${film.title}" /></li>
+					<li><h2><c:out value="${film.title}" /></h2></li>
 					<ul>
-
+						
+						<li>ID=<c:out value="${film.id}" /></li>
 						<li>Length=<c:out value="${film.length}" /></li>
 						<li>Rating=<c:out value="${film.rating}" /></li>
 						<li>Description=<c:out value="${film.description}" /></li>
 						<li>Cast=<c:out value="${film.cast}" /></li>
 					</ul>
-					<form action="deletefilm.do" method="GET">
+					<form action="deletefilm.do" method="POST">
 					ID =<input type = "number" name= "id" value="${film.id}">
 			<input type="submit" class="button" value="Delete this film" /><br />
 		</form>
 		<br><br>
 		<h3>Update this Film</h3>
-		<form action="updatefilm.do" method = "GET">
+		<form action="updatefilm.do" method="POST">
 ID <input type = "number" name= "film id" value="${film.id}">	<br>	
 Title
 <input type = "text" name= "film title" value= "${film.title}">
@@ -46,6 +47,8 @@ Title
 <input type = "submit" value = "Update Film">
 
 </form>
+<br><br>
+<hr>
 				</c:forEach>
 
 
@@ -55,37 +58,13 @@ Title
 Error.  No film found.
 </c:otherwise>
 </c:choose>
+<br><br>
 				<form action="home.do" method="GET">
 			<input type="submit" class="button" value="Go back" /><br />
 		</form>
 
-		<br>
-		<br>
-		<form action="home.do" method="GET">
-			<input type="submit" class="button" value="Go back" /><br />
-		</form>
-		<br><br>
-		<h3>Update this Film</h3>
-		<form action="updatefilm.do" method = "GET">
-ID <input type = "number" name= "id" value="${film.id}">	<br>	
-Title
-<input type = "text" name= "film title" value= "${film.title}">
-<br>Length
-<input type = "number" name= "film length" value="${film.length}">
-<br>Rating
-<select name="film rating" value="${film.rating}">
-  <option value="G">G</option>
-  <option value="PG">PG</option>
-  <option value="PG13">PG13</option>
-  <option value="R">R</option>
-  <option value="NC17">Porn</option>
-</select>
-<br>Description
-<input type = "text" name= "film description" value="${film.description}">
-<br>
-<input type = "submit" value = "Update Film">
+		
 
-</form>
 		
 </body>
 </html>

@@ -7,29 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Films</title>
 </head>
-<body>
-	<c:choose>
-		<c:when test="${filmTitlekey != null}">
-			<ul>
-				<c:forEach var="film" items="${filmTitlekey}">
-					<li><c:out value="${film.title}" /></li>
-					<ul>
-
-						<li>Length=<c:out value="${film.length}" /></li>
-						<li>Rating=<c:out value="${film.rating}" /></li>
-						<li>Description=<c:out value="${film.description}" /></li>
-						<li>Cast=<c:out value="${film.cast}" /></li>
-					</ul>
-						<h3>This film has been deleted.</h3>		
-				</c:forEach>
-
-
-			</ul>
-		</c:when>
-		<c:otherwise>
-Error.  No film found.
-</c:otherwise>
-</c:choose>
+<body>This film has been deleted
 
 		<br>
 		<br>

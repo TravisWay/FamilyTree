@@ -8,6 +8,6 @@ public interface FilmDAO {
 	List<Film> getFilmTitleByKeyword(String key);
 	Film addFilm(Film film);
 	int deleteFilm(int id);
-	int updateFilm(Film film);
+	Film updateFilm(Film film);
 	
 }

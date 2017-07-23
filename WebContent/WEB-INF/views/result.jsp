@@ -17,6 +17,7 @@
 					<li>Description=<c:out value="${film.description}" /></li>
 					<li>Cast=<c:out value="${film.cast}" /></li>
 					<ul>
+					<h3>Film has been added</h3>
 </c:when>
 <c:otherwise>
 Error.  Film was not added.
