@@ -4,20 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="style.css" rel="stylesheet">
+<link href="style2.css" rel="stylesheet">
 <meta charset="utf-8">
 <title>Family Tree</title>
 </head>
 <body>
-
-
-		<c:forEach items="${tree}" var="people">
-    <tr>
-        <td><c:out value="${people.fname}"/></td>
-        <td><c:out value="${people.lname}"/></td>  
-    </tr>
-</c:forEach>
-				
+<p>Content will be added soon.</p>
 
 </body>
 

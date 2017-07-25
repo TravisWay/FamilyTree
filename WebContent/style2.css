@@ -1,0 +1,79 @@
+* {
+	font-family:sans-serif;
+	padding:0;
+	color:#7a7a76;
+}
+
+body {
+	background-color: #a7d2e8;
+	background-image:
+		url('https://openclipart.org/image/2400px/svg_to_png/263892/Colorful-Natural-Tree.png');
+ 
+	background-repeat: no-repeat;
+}
+
+h1 {
+	color: #1fc622;
+text-align : center;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.button {
+	font-family: verdana; 
+	border-radius : 8px;
+	background-color: #1fc622;
+	border: none;
+	color: #efefef;
+	padding: 8px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	border-radius: 8px;
+
+    
+   
+
+}
+
+.button:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0
+		rgba(0, 0, 0, 0.19);
+	background-color: #019904;
+	color: black;
+}
+
+p {
+	color:#7a7a76;
+	font-size: 28px;
+	line-height: 1.5;
+	
+}
+.tree{
+	font-family:Helvetica;
+	font-weight: bold;
+	color:#1fc622;
+	
+}
+.select{
+	font-family: verdana; 
+	border-radius : 8px;
+	background-color: #1fc622;
+	border: none;
+	color: #efefef;
+	padding: 8px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	border-radius: 8px;
+}

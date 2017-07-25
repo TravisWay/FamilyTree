@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Add</title>
+<link href="style2.css" rel="stylesheet">
+</head>
+<body>
+	<h3>Delete a Family Member</h3>
+	<form action="killpeople.do" method="POST">
+
+		<br> <br> <br> Name <input type="text" class="button" name="fname"
+			value="First Name" /> <input type="text" class="button" name="lname"
+			value="Last Name" /><br> <br> Relation<select
+			name="relation" class="select">
+			<option value="You">You</option>
+			<option value="Sister">Sister</option>
+			<option value="Brother">Brother</option>
+			<option value="Daughter">Daughter</option>
+			<option value="Son">Son</option>
+			<option value="Mother">Mother</option>
+			<option value="Father">Father</option>
+			<option value="Aunt">Aunt</option>
+			<option value="Uncle">Uncle</option>
+			<option value="Grandmother">Grandma(mother's side)</option>
+			<option value="Grandmother">Grandma(father's side)</option>
+			<option value="Grandfather">Grandfather(mother's side)</option>
+			<option value="Grandfather">Grandfather(mother's side)</option>
+			<option value="GreatGrandmother">GreatGrandma(mother's side)</option>
+			<option value="GreatGrandmother">GreatGrandma(father's side)</option>
+			<option value="GreatGrandfather">GreatGrandfather(mother's
+				side)</option>
+			<option value="GreatGrandfather">GreatGrandfather(mother's
+				side)</option>
+		</select><br> <br> <input type="submit" class="button" value="Delete Family Member" />
+	</form>
+	<br><br><br>
+	<form action="killallpeople.do" method="POST">
+		<input type="submit" class="button" value="Delete All Members" /><br><br>
+		<a href="index2.html" class="button">Go back</a>
+	</form>
+</body>
+</html>
