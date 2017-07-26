@@ -21,7 +21,20 @@
 							 <br> <br>
 				<br> <br></li>
 		</c:forEach>
+		<form action="updatefamily.do" method="POST">
+First Name <input type="text" class="button" name="fname" value="${people.fname}" /><br /> 
+Last Name
+<input type="text" class="button" name="lname" value="${people.lname}"/>
+<br>Age
+<input type = "number" class="button" name= "age" value="${people.age}">
+
+<br><br>
+<input type = "submit" value = "Update Family Member" class="button">
+
+</form>	
+	<hr>
 	</ul>
+
 	</p>
 	<br>
 	<br>
