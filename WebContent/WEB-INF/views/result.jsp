@@ -18,7 +18,7 @@
     </tr>
 </c:forEach>
 				
-
+<a href="index2.html" class="button">Go back</a>
 </body>
 
 

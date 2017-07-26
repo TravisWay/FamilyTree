@@ -40,7 +40,7 @@ public class crudController {
 	@RequestMapping(path = "searchname.do", method = RequestMethod.GET)
 	public ModelAndView getPeopleByName(@RequestParam("data") String s, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("resultsearch.jsp");
+		mv.setViewName("WEB-INF/views/resultsearch.jsp");
 		// session.setAttribute("searchresults", familyTreeDAO.getPeopleByName(s));
 		mv.addObject("result", familyTreeDAO.getPeopleByName(s));
 		return mv;
@@ -72,10 +72,10 @@ public class crudController {
 	}
 
 	@RequestMapping(path = "killpeople.do", method = RequestMethod.POST)
-	public ModelAndView killMember(People people, HttpSession session, RedirectAttributes redir) {
+	public ModelAndView killMember(@RequestParam("fname") String fname, @RequestParam("lname") String lname, HttpSession session, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("redirect:killpeople2.do");
-		redir.addFlashAttribute("result", familyTreeDAO.killPeople(people));
+		redir.addFlashAttribute("result", familyTreeDAO.killPeople(fname, lname));
 		return mv;
 	}
 
@@ -87,7 +87,7 @@ public class crudController {
 	}
 
 	@RequestMapping(path = "killallpeople.do", method = RequestMethod.POST)
-	public ModelAndView DeleteAll(People people, HttpSession session, RedirectAttributes redir) {
+	public ModelAndView DeleteAll(HttpSession session, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("redirect:killallpeople2.do");
 		redir.addFlashAttribute("result", familyTreeDAO.DeleteAll());

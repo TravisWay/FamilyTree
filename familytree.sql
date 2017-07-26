@@ -5,25 +5,23 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema familytree
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `mydb` ;
+DROP SCHEMA IF EXISTS `familytree` ;
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema familytree
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-SHOW WARNINGS;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `familytree` DEFAULT CHARACTER SET utf8 ;
+USE `familytree` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`People`
+-- Table `people`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`People` ;
+DROP TABLE IF EXISTS `people` ;
 
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `mydb`.`People` (
-  `ID` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `people` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
   `fname` VARCHAR(45) NOT NULL,
   `lname` VARCHAR(45) NOT NULL,
   `age` INT NOT NULL,
@@ -33,34 +31,29 @@ CREATE TABLE IF NOT EXISTS `mydb`.`People` (
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB;
 
-SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Tree`
+-- Table `tree`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Tree` ;
+DROP TABLE IF EXISTS `tree` ;
 
-SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `mydb`.`Tree` (
+CREATE TABLE IF NOT EXISTS `tree` (
   `branch` INT NOT NULL,
   PRIMARY KEY (`branch`),
   CONSTRAINT `fk_id1`
     FOREIGN KEY (`branch`)
-    REFERENCES `mydb`.`People` (`ID`)
+    REFERENCES `people` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-SHOW WARNINGS;
 SET SQL_MODE = '';
 GRANT USAGE ON *.* TO ftuser@localhost;
  DROP USER ftuser@localhost;
 SET SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-SHOW WARNINGS;
 CREATE USER 'ftuser'@'localhost' IDENTIFIED BY 'ftuser';
 
-GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE `mydb`.* TO 'ftuser'@'localhost';
-SHOW WARNINGS;
+GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'ftuser'@'localhost';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

@@ -18,8 +18,7 @@
 							value="${people.fname}" /> <br> 
 							<c:out
 							value="${people.lname}" />	<br>	
-							<c:out				
-							value="${people.relation}" /> <br> <br>
+							 <br> <br>
 				<br> <br></li>
 		</c:forEach>
 	</ul>

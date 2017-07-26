@@ -10,7 +10,7 @@ public interface FamilyTreeDAOdb {
 
 	public People addPeople(People people);
 
-	public boolean killPeople(People people);
+	public boolean killPeople(String fname, String lname);
 
 	public boolean DeleteAll();
 
