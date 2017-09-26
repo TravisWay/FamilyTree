@@ -1,5 +1,5 @@
-This film CRUD project was completed by Travis Way.
+This FamilyTree project was completed by Travis Way.
 
-The user has the ability to search, update, delete films based off id.
+The user has the ability to search, add, or delete family members in their tree.
 
-The hurdles I had to overcome involved using the redirect and flash variables to avoid bugs in my code.
+Still a work in progress as the output html could use some work.
